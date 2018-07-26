@@ -1,6 +1,5 @@
 @import 'config';
 @import 'menu';
-
 * {
   box-sizing: border-box;
 }
@@ -21,11 +20,9 @@ h2,
 h3 {
   margin: 0;
   font-weight: 400;
-
   &.lg-heading {
     font-size: 4.5rem;
   }
-
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
@@ -49,23 +46,18 @@ header {
 }
 
 main {
-  padding: 4rem;
-  // height: 100%;
+  padding: 4rem; // height: 100%;
   min-height: calc(100vh - 60px);
-
   .icons {
     margin-top: 1rem;
-
     a {
       padding: 0.4rem;
-
       &:hover {
         color: $secondary-color;
         @include easeOut();
       }
     }
   }
-
   &#home {
     overflow: hidden;
     h1 {
@@ -77,18 +69,14 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas:
-    'bioimage bio bio'
-    'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
-
   .bio-image {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
   }
-
   .bio {
     grid-area: bio;
     font-size: 1.5rem;
@@ -100,15 +88,29 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr);
-
-  img {
+  .card {
+    border-radius: 5px;
     width: 100%;
-    border: 3px #fff solid;
-
+    padding: 8px;
+    border: 3px $secondary-color solid;
+    background: #fff;
+    .project-title {
+      text-align: center;
+      color: #000;
+    }
+    .project-desc {
+      color: #000;
+      padding: 5px; // color: #000;
+    }
     &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
+      .project-title {
+        color: #000;
+      }
+      .project-desc {
+        color: #000;
+      }
+      background: $secondary-color;
+      border-color: #fff; // @include easeOut;
     }
   }
 }
@@ -120,14 +122,12 @@ main {
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
-
   div {
     font-size: 2rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     @include easeOut;
-
     &:hover {
       padding: 0.5rem 1.5rem;
       background: $secondary-color;
@@ -141,12 +141,13 @@ main {
 
 // Button Styles
 .btn {
+  text-align: center;
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
   &:hover {
-    background: $secondary-color;
+    background: #fff;
     color: set-text-color($secondary-color);
   }
 }
@@ -155,6 +156,7 @@ main {
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
+  border-radius: 25px;
 }
 
 .btn-light {

@@ -162,7 +162,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -177,13 +177,25 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
+  .projects .card {
+    border-radius: 5px;
     width: 100%;
-    border: 3px #fff solid; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #eece1a;
-      transition: all 0.5s ease-out; }
+    padding: 8px;
+    border: 3px #eece1a solid;
+    background: #fff; }
+    .projects .card .project-title {
+      text-align: center;
+      color: #000; }
+    .projects .card .project-desc {
+      color: #000;
+      padding: 5px; }
+    .projects .card:hover {
+      background: #eece1a;
+      border-color: #fff; }
+      .projects .card:hover .project-title {
+        color: #000; }
+      .projects .card:hover .project-desc {
+        color: #000; }
 
 .boxes {
   display: flex;
@@ -205,17 +217,19 @@ main {
         color: #000; }
 
 .btn, .btn-dark, .btn-light {
+  text-align: center;
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #eece1a;
+    background: #fff;
     color: #000; }
 
 .btn-dark {
   background: black;
-  color: #fff; }
+  color: #fff;
+  border-radius: 25px; }
 
 .btn-light {
   background: #c4c4c4;
